@@ -14,9 +14,9 @@ def convert_try(array):
     """Функция пробует преобразовать слово в формат bytes, применяя кодировку ASCII"""
     for word in array:
         try:
-            print(bytes(word.encode('ASCII')))
-        except UnicodeEncodeError:
-            print(word + ' невозможно преобразовать с помощью маркировки b')
+            print(eval(f"b'{word}'"))
+        except SyntaxError:
+            print(f"\"{word}\" невозможно преобразовать с помощью маркировки b")
 
 
 convert_try(WORDS_STR)
