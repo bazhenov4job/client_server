@@ -43,10 +43,11 @@ import csv
 import chardet
 
 
-re_prod = re.compile("(?<=Изготовитель системы:             ).+")
-re_name = re.compile("(?<=Название ОС:                      ).+")
-re_code = re.compile("(?<=Код продукта:                     ).+")
-re_type = re.compile("(?<=Тип системы:                      ).+")
+re_prod = re.compile("Изготовитель системы:.+")
+re_name = re.compile("Название ОС:.+")
+re_code = re.compile("Код продукта:.+")
+re_type = re.compile("Тип системы:.+")
+re_split = re.compile("\s{2,}")
 
 
 def detect_encoding(file_name):
@@ -66,14 +67,23 @@ def get_data(*files):
         encoding = detect_encoding(file)
         with open(file, 'r', encoding=encoding) as info_file:
             text = info_file.read()
+
             match_prod = re.findall(re_prod, text)
-            os_prod_list.append(match_prod[0])
+            match_res = re.split(re_split, match_prod[0])
+            os_prod_list.append(match_res[1])
+
             match_name = re.findall(re_name, text)
-            os_name_list.append(match_name[0])
+            match_res = re.split(re_split, match_name[0])
+            os_name_list.append(match_res[1])
+
             match_code = re.findall(re_code, text)
-            os_code_list.append(match_code[0])
+            match_res = re.split(re_split, match_code[0])
+            os_code_list.append(match_res[1])
+
             match_type = re.findall(re_type, text)
-            os_type_list.append(match_type[0])
+            match_res = re.split(re_split, match_type[0])
+            os_type_list.append(match_res[1])
+
     main_data = [['Изготовитель системы',
                   'Название ОС', 'Код продукта', 'Тип системы']]
     spam_list = []
