@@ -38,3 +38,29 @@
 и достучаться до списка, который и нужно пополнять
 а потом сохранять все в файл
 """
+
+
+import json
+
+
+def write_order_to_json(**data):
+    """Функция добавляет параметры нового заказа в json файл"""
+    with open('orders.json', 'r') as json_file:
+        info = json.load(json_file)
+        info['orders'].append({
+            "item": data['item'],
+            "quantity": data['quantity'],
+            "price": data['price'],
+            "buyer": data['buyer'],
+            "date": data['date']
+        })
+    with open('orders.json', 'w') as json_file:
+        json.dump(info, json_file, indent=4)
+
+
+write_order_to_json(
+    item='Manhattan',
+    quantity='1',
+    price='24',
+    buyer='Peter Minuit',
+    date='04.05.1626')

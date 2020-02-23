@@ -41,13 +41,6 @@
             "price": "40000",
             "buyer": "Sidorov S.S.",
             "date": "2.05.2019"
-        },
-        {
-            "item": "Manhattan",
-            "quantity": "1",
-            "price": "24",
-            "buyer": "Peter Minuit",
-            "date": "04.05.1626"
         }
     ]
 }
