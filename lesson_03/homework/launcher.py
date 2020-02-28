@@ -6,10 +6,10 @@ while True:
     ANSWER = input("Выберите действие:\n s - запуск, x - закрыть все окна, q - выйти\n")
 
     if ANSWER == 's':
-        PROCESS.append(subprocess.Popen('python Server.py',
+        PROCESS.append(subprocess.Popen('python server.py',
                                         creationflags=subprocess.CREATE_NEW_CONSOLE))
 
-        PROCESS.append(subprocess.Popen('python Client.py',
+        PROCESS.append(subprocess.Popen('python client.py',
                                         creationflags=subprocess.CREATE_NEW_CONSOLE))
 
     elif ANSWER == 'x':
