@@ -27,7 +27,7 @@ sock.listen(5)
 
 while True:
     client, addr = sock.accept()
-    message = utils.get_massage(client, BYTES_TO_READ)
+    message = utils.get_message(client, BYTES_TO_READ)
     print(message)
     response = utils.create_response(message)
     utils.send_response(client, response)
