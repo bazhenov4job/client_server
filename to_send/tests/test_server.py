@@ -1,10 +1,10 @@
+import json
+from common import utils
 import unittest
 import sys
 import os
 module_path = os.path.split(os.getcwd())[0]
 sys.path.insert(0, module_path)
-from common import utils
-import json
 
 
 class TestSocket:

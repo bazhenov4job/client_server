@@ -1,10 +1,10 @@
+import json
+from common import utils
 import unittest
 import sys
 import os
 module_path = os.path.split(os.getcwd())[0]
 sys.path.insert(0, module_path)
-from common import utils
-import json
 
 
 class TestSocket:
@@ -40,8 +40,11 @@ class TestCreatePresence(unittest.TestCase):
         password = 'password'
         message = utils.create_presence(user, password)
         dict_massage = json.loads(message)
-        self.assertEqual((user, password),
-                         (dict_massage['user']['user'], dict_massage['user']['password']))
+        self.assertEqual(
+            (user,
+             password),
+            (dict_massage['user']['user'],
+             dict_massage['user']['password']))
 
 
 class TestSendMessage(unittest.TestCase):
