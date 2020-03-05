@@ -71,43 +71,4 @@ class TestHandleResponse(unittest.TestCase):
         self.assertEqual(type(response), message_type)
 
 
-class TestGetMessage(unittest.TestCase):
 
-    def testMessage(self):
-        socket = TestSocket()
-        test_response = {"some": "object"}
-        bytes_to_read = len(json.dumps(test_response))
-        response = utils.get_message(socket, bytes_to_read)
-        self.assertEqual(test_response, response)
-
-
-class TestCreateResponse(unittest.TestCase):
-
-    def testResponsePresence(self):
-        message = {"action": "presence"}
-        response = utils.create_response(message)
-        correct_responce = {
-            "response": 200,
-            "alert": None
-        }
-        self.assertEqual(correct_responce, response)
-
-    def testWrongMessage(self):
-        wrong_message = {"action": "abrakadabra"}
-        correct_responce = {
-            "response": 400,
-            "alert": "Unknown action"
-        }
-        response = utils.create_response(wrong_message)
-
-        self.assertEqual(correct_responce, response)
-
-
-class TestSendResponse(unittest.TestCase):
-
-    def testBytesSend(self):
-        socket = TestSocket()
-        json_message = {"some": "object"}
-        correct_bytes = len(json.dumps(json_message).encode('utf-8'))
-        bytes_send = utils.send_response(socket, json_message)
-        self.assertEqual(correct_bytes, bytes_send)
