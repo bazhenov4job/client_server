@@ -3,7 +3,7 @@ import json
 
 
 def create_presence(user, password):
-    """Создаёь сообщение присутствия на стороне клиента"""
+    """Создаёт сообщение присутствия на стороне клиента"""
     massage = {
         "action": "presence",
         "time": time.time(),
