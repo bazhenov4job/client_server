@@ -37,14 +37,12 @@ except KeyError:
     PORT = variables.PORT
 
 
-while True:
-    sock = socket(AF_INET, SOCK_STREAM)
-    sock.connect((HOST, PORT))
-    message = utils.create_presence(USER, PASSWORD)
-    utils.send_message(sock, message)
-    response = utils.get_response(sock, BYTES_TO_READ)
-    handled_response = utils.handle_response(response)
-    for key, value in handled_response.items():
-        print(key, value)
-    sock.close()
-    sleep(1)
+sock = socket(AF_INET, SOCK_STREAM)
+sock.connect((HOST, PORT))
+message = utils.create_presence(USER, PASSWORD)
+utils.send_message(sock, message)
+response = utils.get_response(sock, BYTES_TO_READ)
+handled_response = utils.handle_response(response)
+for key, value in handled_response.items():
+    print(key, value)
+sock.close()

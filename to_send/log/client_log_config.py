@@ -9,4 +9,3 @@ app_logger = getLogger('app.' + __name__)
 app_logger.addHandler(_handler)
 app_logger.setLevel(INFO)
 
-app_logger.info('Тестовый запуск')
