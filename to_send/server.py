@@ -7,7 +7,7 @@ import os
 sys.path.insert(0, os.getcwd())
 from log.server_log_config import ServerLog
 
-server_logger = ServerLog()
+server_logger = ServerLog(r"log\server_log.txt", 'server_log')
 
 BYTES_TO_READ = variables.BYTES_TO_READ
 

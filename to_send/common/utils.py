@@ -8,7 +8,7 @@ from log.client_log_config import ClientLog
 from log.server_log_config import ServerLog
 
 client_logger = ClientLog()
-server_logger = ServerLog()
+utils_server_logger = ServerLog(r"log\utils_server_log.txt", 'utils_server_log')
 
 
 def create_presence(user, password):
@@ -53,7 +53,7 @@ def get_message(client, bytes_to_read):
     полученное от клиента"""
     bytes_message = client.recv(bytes_to_read)
     message = json.loads(bytes_message.decode('utf-8'))
-    server_logger.logEvent("Сервер получил сообщение от клиента")
+    utils_server_logger.logEvent("Сервер получил сообщение от клиента")
     return message
 
 
@@ -68,20 +68,20 @@ def create_response(message):
     try:
         message['action']
     except KeyError:
-        server_logger.logEvent("Неверное сообщение, отсутствует ключ")
+        utils_server_logger.logEvent("Неверное сообщение, отсутствует ключ")
     if message['action'] == "presence":
         response = {
             "response": 200,
             "alert": None
         }
-        server_logger.logEvent("Получено сообщение присутствия")
+        utils_server_logger.logEvent("Получено сообщение присутствия")
         return response
     else:
         response = {
             "response": 400,
             "alert": "Unknown action"
         }
-        server_logger.logEvent("Получено неизвестное сообщение")
+        utils_server_logger.logEvent("Получено неизвестное сообщение")
         return response
 
 

@@ -1,0 +1,36 @@
+2020-03-10 15:42:16,337 - INFO - client_log_config - Адреса хоста выбран по умолчанию
+2020-03-10 15:42:16,337 - INFO - client_log_config - Порт хоста выбран по умолчанию
+2020-03-10 15:42:16,337 - INFO - client_log_config - Порт хоста выбран по умолчанию
+2020-03-10 15:42:16,344 - INFO - client_log_config - Создано сообщение присутствия
+2020-03-10 15:42:16,344 - INFO - client_log_config - Создано сообщение присутствия
+2020-03-10 15:42:16,344 - INFO - client_log_config - Создано сообщение присутствия
+2020-03-10 15:42:16,344 - INFO - client_log_config - Отправлено сообщение на сервер
+2020-03-10 15:42:16,344 - INFO - client_log_config - Отправлено сообщение на сервер
+2020-03-10 15:42:16,344 - INFO - client_log_config - Отправлено сообщение на сервер
+2020-03-10 15:42:16,344 - INFO - client_log_config - Отправлено сообщение на сервер
+2020-03-10 15:42:16,345 - INFO - client_log_config - Получен ответ от сервера
+2020-03-10 15:42:16,345 - INFO - client_log_config - Получен ответ от сервера
+2020-03-10 15:42:16,345 - INFO - client_log_config - Получен ответ от сервера
+2020-03-10 15:42:16,345 - INFO - client_log_config - Получен ответ от сервера
+2020-03-10 15:42:16,345 - INFO - client_log_config - Получен ответ от сервера
+2020-03-10 15:42:16,345 - INFO - client_log_config - Ответ сервера обработан
+2020-03-10 15:42:16,345 - INFO - client_log_config - Ответ сервера обработан
+2020-03-10 15:42:16,345 - INFO - client_log_config - Ответ сервера обработан
+2020-03-10 15:42:16,345 - INFO - client_log_config - Ответ сервера обработан
+2020-03-10 15:42:16,345 - INFO - client_log_config - Ответ сервера обработан
+2020-03-10 15:42:16,345 - INFO - client_log_config - Ответ сервера обработан
+2020-03-10 15:42:16,346 - INFO - client_log_config - Получено сообщениеresponse, 200
+2020-03-10 15:42:16,346 - INFO - client_log_config - Получено сообщениеresponse, 200
+2020-03-10 15:42:16,346 - INFO - client_log_config - Получено сообщениеresponse, 200
+2020-03-10 15:42:16,346 - INFO - client_log_config - Получено сообщениеresponse, 200
+2020-03-10 15:42:16,346 - INFO - client_log_config - Получено сообщениеresponse, 200
+2020-03-10 15:42:16,346 - INFO - client_log_config - Получено сообщениеresponse, 200
+2020-03-10 15:42:16,346 - INFO - client_log_config - Получено сообщениеresponse, 200
+2020-03-10 15:42:16,346 - INFO - client_log_config - Получено сообщениеalert, None
+2020-03-10 15:42:16,346 - INFO - client_log_config - Получено сообщениеalert, None
+2020-03-10 15:42:16,346 - INFO - client_log_config - Получено сообщениеalert, None
+2020-03-10 15:42:16,346 - INFO - client_log_config - Получено сообщениеalert, None
+2020-03-10 15:42:16,346 - INFO - client_log_config - Получено сообщениеalert, None
+2020-03-10 15:42:16,346 - INFO - client_log_config - Получено сообщениеalert, None
+2020-03-10 15:42:16,346 - INFO - client_log_config - Получено сообщениеalert, None
+2020-03-10 15:42:16,346 - INFO - client_log_config - Получено сообщениеalert, None
