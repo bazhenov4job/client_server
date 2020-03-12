@@ -1,3 +1,0 @@
-2020-03-10 15:42:12,520 - INFO - server_log_config - Адреса хоста выбран по умолчанию
-2020-03-10 15:42:12,520 - INFO - server_log_config - Порт хоста выбран по умолчанию
-2020-03-10 15:42:16,345 - INFO - server_log_config - Сервер получил сообщение  "{'action': 'presence', 'time': 1583844136.344949, 'user': {'user': 'guest', 'password': 'password'}}" 

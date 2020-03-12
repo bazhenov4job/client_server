@@ -1,41 +1,48 @@
 from socket import *
-import time
+import logging
 import argparse
 from common import utils, variables
 import sys
 import os
 sys.path.insert(0, os.getcwd())
-from log.server_log_config import ServerLog
+import log.server_log_config
 
-server_logger = ServerLog(r"log\server_log.txt", 'server_log')
+server_logger = logging.getLogger('server')
 
 BYTES_TO_READ = variables.BYTES_TO_READ
 
-parser = argparse.ArgumentParser()
-parser.add_argument('-a')
-parser.add_argument('-p')
-args = vars(parser.parse_args())
-try:
-    LISTEN = args['-a']
-    server_logger.logEvent("Получен агрумент адреса хоста")
-except KeyError:
-    LISTEN = variables.HOST
-    server_logger.logEvent("Адреса хоста выбран по умолчанию")
 
-try:
-    PORT = args['-p']
-    server_logger.logEvent("Получен агрумент порта хоста")
-except KeyError:
-    PORT = variables.PORT
-    server_logger.logEvent("Порт хоста выбран по умолчанию")
+def main_server():
 
-sock = socket(AF_INET, SOCK_STREAM)
-sock.bind((LISTEN, PORT))
-sock.listen(5)
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-a')
+    parser.add_argument('-p')
+    args = vars(parser.parse_args())
+    try:
+        LISTEN = args['-a']
+        server_logger.info("Получен агрумент адреса хоста")
+    except KeyError:
+        LISTEN = variables.HOST
+        server_logger.info("Адреса хоста выбран по умолчанию")
 
-client, addr = sock.accept()
-message = utils.get_message(client, BYTES_TO_READ)
-server_logger.logEvent(f"Сервер получил сообщение  \"{message}\" ")
-response = utils.create_response(message)
-utils.send_response(client, response)
-client.close()
+    try:
+        PORT = args['-p']
+        server_logger.info("Получен агрумент порта хоста")
+    except KeyError:
+        PORT = variables.PORT
+        server_logger.info("Порт хоста выбран по умолчанию")
+
+    sock = socket(AF_INET, SOCK_STREAM)
+    sock.bind((LISTEN, PORT))
+    sock.listen(5)
+
+    client, addr = sock.accept()
+    message = utils.get_message(client, BYTES_TO_READ)
+    server_logger.info(f"Сервер получил сообщение  \"{message}\" ")
+    response = utils.create_response(message)
+    utils.send_response(client, response)
+    client.close()
+
+
+if __name__ == '__main__':
+    main_server()

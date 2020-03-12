@@ -1,0 +1,8 @@
+2020-03-12 14:39:31,589 - INFO - server - Адреса хоста выбран по умолчанию
+2020-03-12 14:39:31,589 - INFO - server - Порт хоста выбран по умолчанию
+2020-03-12 14:39:31,607 - INFO - utils - Сервер получил сообщение от клиента
+2020-03-12 14:39:31,614 - INFO - decors - Была вызвана функция get_message c параметрами (<socket.socket fd=536, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 54047)>, 128), {}. Вызов из модуля common.utils. Вызов из функции main_server().Вызов из функции main_server
+2020-03-12 14:39:31,614 - INFO - server - Сервер получил сообщение  "{'action': 'presence', 'time': 1584013171.6004882, 'user': {'user': 'guest', 'password': 'password'}}" 
+2020-03-12 14:39:31,615 - INFO - utils - Получено сообщение присутствия
+2020-03-12 14:39:31,615 - INFO - decors - Была вызвана функция create_response c параметрами ({'action': 'presence', 'time': 1584013171.6004882, 'user': {'user': 'guest', 'password': 'password'}},), {}. Вызов из модуля common.utils. Вызов из функции main_server().Вызов из функции main_server
+2020-03-12 14:39:31,616 - INFO - decors - Была вызвана функция send_response c параметрами (<socket.socket fd=536, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 54047)>, {'response': 200, 'alert': None}), {}. Вызов из модуля common.utils. Вызов из функции main_server().Вызов из функции main_server

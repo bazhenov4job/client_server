@@ -2,15 +2,18 @@ import time
 import json
 import sys
 import os
+import logging
 module_path = os.path.split(os.getcwd())[0]
 sys.path.insert(0, module_path)
-from log.client_log_config import ClientLog
-from log.server_log_config import ServerLog
+import log.client_log_config
+import log.server_log_config
+from decors import log
 
-client_logger = ClientLog()
-utils_server_logger = ServerLog(r"log\utils_server_log.txt", 'utils_server_log')
+server_logger = logging.getLogger('server')
+client_logger = logging.getLogger('client')
 
 
+@log
 def create_presence(user, password):
     """Создаёт сообщение присутствия на стороне клиента"""
     massage = {
@@ -22,41 +25,46 @@ def create_presence(user, password):
         }
     }
     json_massage = json.dumps(massage)
-    client_logger.logEvent("Создано сообщение присутствия")
+    client_logger.info("Создано сообщение присутствия")
     return json_massage
 
 
+@log
 def send_message(socket, message):
     """Посылает сообщение от клиента на сторону сервера"""
     bytes_sent = socket.send(message.encode('utf-8'))
-    client_logger.logEvent("Отправлено сообщение на сервер")
+    client_logger.info("Отправлено сообщение на сервер")
     return bytes_sent
 
 
+@log
 def get_response(socket, bytes_to_read):
     """Получает ответ от сервера"""
     response = socket.recv(bytes_to_read)
-    client_logger.logEvent("Получен ответ от сервера")
+    client_logger.info("Получен ответ от сервера")
     return response
 
 
+@log
 def handle_response(response):
     """обрабатывает полученный от сервера ответ"""
     string_response = response.decode('utf-8')
     json_response = json.loads(string_response)
-    client_logger.logEvent("Ответ сервера обработан")
+    client_logger.info("Ответ сервера обработан")
     return json_response
 
 
+@log
 def get_message(client, bytes_to_read):
     """Функция на стороне сервера обрабатывает сообщение,
     полученное от клиента"""
     bytes_message = client.recv(bytes_to_read)
     message = json.loads(bytes_message.decode('utf-8'))
-    utils_server_logger.logEvent("Сервер получил сообщение от клиента")
+    server_logger.info("Сервер получил сообщение от клиента")
     return message
 
 
+@log
 def create_response(message):
     """
     Создаёт отет для сообщения от клиента на стороне сервера
@@ -68,23 +76,24 @@ def create_response(message):
     try:
         message['action']
     except KeyError:
-        utils_server_logger.logEvent("Неверное сообщение, отсутствует ключ")
+        server_logger.info("Неверное сообщение, отсутствует ключ")
     if message['action'] == "presence":
         response = {
             "response": 200,
             "alert": None
         }
-        utils_server_logger.logEvent("Получено сообщение присутствия")
+        server_logger.info("Получено сообщение присутствия")
         return response
     else:
         response = {
             "response": 400,
             "alert": "Unknown action"
         }
-        utils_server_logger.logEvent("Получено неизвестное сообщение")
+        server_logger.info("Получено неизвестное сообщение")
         return response
 
 
+@log
 def send_response(client, response):
     json_response = json.dumps(response)
     bytes_send = client.send(json_response.encode('utf-8'))
