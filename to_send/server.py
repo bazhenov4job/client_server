@@ -35,13 +35,14 @@ def main_server():
     sock = socket(AF_INET, SOCK_STREAM)
     sock.bind((LISTEN, PORT))
     sock.listen(5)
+    while True:
 
-    client, addr = sock.accept()
-    message = utils.get_message(client, BYTES_TO_READ)
-    server_logger.info(f"Сервер получил сообщение  \"{message}\" ")
-    response = utils.create_response(message)
-    utils.send_response(client, response)
-    client.close()
+        client, addr = sock.accept()
+        message = utils.get_message(client, BYTES_TO_READ)
+        server_logger.info(f"Сервер получил сообщение  \"{message}\" ")
+        response = utils.create_response(message)
+        utils.send_response(client, response)
+        client.close()
 
 
 if __name__ == '__main__':

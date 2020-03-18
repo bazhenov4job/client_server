@@ -1,0 +1,16 @@
+2020-03-16 11:01:15,176 - INFO - server - Адреса хоста выбран по умолчанию
+2020-03-16 11:01:15,176 - INFO - server - Порт хоста выбран по умолчанию
+2020-03-16 11:01:40,413 - INFO - utils - Сервер получил сообщение от клиента
+2020-03-16 11:01:40,418 - INFO - decors - Функция get_messageВызов из модуля common.utils. Вызов из функции main_server().Вызов из функции main_server
+2020-03-16 11:01:40,418 - INFO - server - Сервер получил сообщение  "{'action': 'presence', 'time': 1584345700.4082468, 'user': {'user': 'guest', 'password': 'password'}}" 
+2020-03-16 11:01:40,418 - INFO - utils - Получено сообщение присутствия
+2020-03-16 11:01:40,419 - INFO - decors - Функция create_responseВызов из модуля common.utils. Вызов из функции main_server().Вызов из функции main_server
+2020-03-16 11:01:40,419 - INFO - decors - Функция send_responseВызов из модуля common.utils. Вызов из функции main_server().Вызов из функции main_server
+2020-03-16 11:01:49,070 - INFO - server - Адреса хоста выбран по умолчанию
+2020-03-16 11:01:49,071 - INFO - server - Порт хоста выбран по умолчанию
+2020-03-16 11:02:02,224 - INFO - utils - Сервер получил сообщение от клиента
+2020-03-16 11:02:02,230 - INFO - decors - Функция get_messageВызов из модуля common.utils. Вызов из функции main_server().Вызов из функции main_server
+2020-03-16 11:02:02,231 - INFO - server - Сервер получил сообщение  "{'action': 'presence', 'time': 1584345722.2168922, 'user': {'user': 'guest', 'password': 'password'}}" 
+2020-03-16 11:02:02,231 - INFO - utils - Получено сообщение присутствия
+2020-03-16 11:02:02,231 - INFO - decors - Функция create_responseВызов из модуля common.utils. Вызов из функции main_server().Вызов из функции main_server
+2020-03-16 11:02:02,233 - INFO - decors - Функция send_responseВызов из модуля common.utils. Вызов из функции main_server().Вызов из функции main_server

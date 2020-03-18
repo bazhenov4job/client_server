@@ -49,8 +49,6 @@ def main_client():
         PORT = variables.PORT
         client_logger.info("Порт хоста выбран по умолчанию")
 
-
-
     sock = socket(AF_INET, SOCK_STREAM)
     sock.connect((HOST, PORT))
     message = utils.create_presence(USER, PASSWORD)
