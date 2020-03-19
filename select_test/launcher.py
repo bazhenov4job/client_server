@@ -8,8 +8,10 @@ while True:
     if answer == 's':
         pros.append(subprocess.Popen("python server.py", creationflags=subprocess.CREATE_NEW_CONSOLE))
 
-        for _ in range(3):
+        for _ in range(2):
             pros.append(subprocess.Popen("python client.py", creationflags=subprocess.CREATE_NEW_CONSOLE))
+
+        pros.append(subprocess.Popen("python client.py -m w", creationflags=subprocess.CREATE_NEW_CONSOLE))
 
     elif answer == 'x':
         while pros:

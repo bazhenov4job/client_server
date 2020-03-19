@@ -1,6 +1,5 @@
 import select
 from socket import socket, AF_INET, SOCK_STREAM
-import random
 
 
 def read_requests(r_clients, all_clients):
@@ -20,16 +19,18 @@ def read_requests(r_clients, all_clients):
 
 def write_response(requests, w_clients, all_clients):
 
-    for sock in w_clients:
-        if sock in requests:
+    for r_sock in requests:
+        message = requests[r_sock]
 
-            try:
-                resp = requests[sock].encode('utf-8')
-                sock.send(resp)
-            except:
-                print(f"Клиент {sock.fileno()} {sock.getpeername()} отключился.")
-                sock.close()
-                all_clients.remove(sock)
+        for w_sock in w_clients:
+            if r_sock != w_sock:
+                print(w_sock)
+                try:
+                    w_sock.send(message.encode('utf-8'))
+                except:
+                    print(f"Клиент {w_sock.fileno()} {w_sock.getpeername()} отключился.")
+                    w_sock.close()
+                    all_clients.remove(w_sock)
 
 
 def main():
@@ -44,6 +45,7 @@ def main():
     while True:
         try:
             conn, addr = sock.accept()
+            print(addr)
         except OSError as e:
             pass
         else:

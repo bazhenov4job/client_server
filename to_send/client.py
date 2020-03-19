@@ -36,14 +36,14 @@ def main_client():
     parser.add_argument('-p')
     args = vars(parser.parse_args())
     try:
-        HOST = args['-a']
+        HOST = args['a']
         client_logger.info("Получен агрумент адреса хоста")
     except KeyError:
         HOST = variables.HOST
         client_logger.info("Адреса хоста выбран по умолчанию")
 
     try:
-        PORT = args['-p']
+        PORT = args['p']
         client_logger.info("Получен агрумент порта хоста")
     except KeyError:
         PORT = variables.PORT
