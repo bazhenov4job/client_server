@@ -45,8 +45,8 @@ def create_message(client, text):
         'encoding': 'utf-8',
         'message': text
     }
-    json_messaage = json.dumps(message).encode('utf-8')
-    return json_messaage
+    json_message = json.dumps(message).encode('utf-8')
+    return json_message
 
 
 @log
@@ -93,34 +93,28 @@ def create_response(message):
     :return:
     TODO: добавить проверки на ЛЮБЫЕ СООБЩЕНИЯ, в том числе те, в которых нет 'action'
     """
+    response = {}
     try:
         message['action']
     except KeyError:
         server_logger.info("Неверное сообщение, отсутствует ключ")
-    if message['action'] == "presence":
-        response = {
-            "response": 200,
-            "alert": None
-        }
-        server_logger.info("Получено сообщение присутствия")
-        return response
-    elif message['action'] == 'msg':
-        response = {
-            'action': 'msg',
-            'time': time.asctime(),
-            'to': '',
-            'from': '',
-            'encoding': 'utf-8',
-            'message': message
-        }
-
-    else:
         response = {
             "response": 400,
             "alert": "Unknown action"
         }
         server_logger.info("Получено неизвестное сообщение")
-        return response
+    else:
+        if message['action'] == "presence":
+            response = {
+                "response": 200,
+                "alert": None
+            }
+            server_logger.info("Получено сообщение присутствия")
+
+        elif message['action'] == 'msg':
+            response = message
+
+    return response
 
 
 @log
