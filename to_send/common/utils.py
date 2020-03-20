@@ -16,7 +16,7 @@ client_logger = logging.getLogger('client')
 @log
 def create_presence(user, password):
     """Создаёт сообщение присутствия на стороне клиента"""
-    massage = {
+    message = {
         "action": "presence",
         "time": time.time(),
         "user": {
@@ -24,9 +24,29 @@ def create_presence(user, password):
                 "password": password
         }
     }
-    json_massage = json.dumps(massage)
+    json_message = json.dumps(message)
     client_logger.info("Создано сообщение присутствия")
-    return json_massage
+    return json_message
+
+
+@log
+def create_message(client, text):
+    """
+    Формирует сообщение с указанием отправителя и проставлением временной метки
+    :param client:
+    :param text:
+    :return:
+    """
+    message = {
+        'action': 'msg',
+        'time': time.asctime(),
+        'to': '',
+        'from': client,
+        'encoding': 'utf-8',
+        'message': text
+    }
+    json_messaage = json.dumps(message).encode('utf-8')
+    return json_messaage
 
 
 @log
@@ -84,6 +104,16 @@ def create_response(message):
         }
         server_logger.info("Получено сообщение присутствия")
         return response
+    elif message['action'] == 'msg':
+        response = {
+            'action': 'msg',
+            'time': time.asctime(),
+            'to': '',
+            'from': '',
+            'encoding': 'utf-8',
+            'message': message
+        }
+
     else:
         response = {
             "response": 400,

@@ -25,7 +25,7 @@ def request(w_clients, all_clients):
     return messages
 
 
-def response(w_clients, r_clients):
+def response(r_clients, w_clients, messages):
     pass
 
 
@@ -74,7 +74,7 @@ def main_server():
             messages = request(clients_to_write, clients)
             server_logger.info(f"Сервер получил сообщение  \"{messages}\" ")
 
-            # gone this far
+            response(client_to_read, clients_to_write, messages)
 
             utils.send_response(client, response)
             client.close()
