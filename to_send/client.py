@@ -34,34 +34,48 @@ def main_client():
     parser = argparse.ArgumentParser()
     parser.add_argument('-a')
     parser.add_argument('-p')
+    parser.add_argument('-m')
     args = vars(parser.parse_args())
-    try:
+    if args['a'] is not None:
         HOST = args['a']
         client_logger.info("Получен агрумент адреса хоста")
-    except KeyError:
+    else:
         HOST = variables.HOST
         client_logger.info("Адреса хоста выбран по умолчанию")
 
-    try:
+    if args['p'] is not None:
         PORT = args['p']
         client_logger.info("Получен агрумент порта хоста")
-    except KeyError:
+    else:
         PORT = variables.PORT
         client_logger.info("Порт хоста выбран по умолчанию")
 
+    if args['m'] is None or args['m'] == 'r':
+        MODE = 'r'
+    else:
+        MODE = 'w'
+
     sock = socket(AF_INET, SOCK_STREAM)
     sock.connect((HOST, PORT))
-    message = utils.create_presence(USER, PASSWORD)
-    utils.send_message(sock, message)
-    response = utils.get_response(sock, BYTES_TO_READ)
-    handled_response = utils.handle_response(response)
-    try:
-        handled_response.items()
-        for key, value in handled_response.items():
-            client_logger.info(f"Получено сообщение{key}, {value}")
-    except AttributeError:
-        client_logger.info("Невозможно разобрать сообщение")
-    sock.close()
+
+    while True:
+
+        # message = utils.create_presence(USER, PASSWORD)
+        if MODE == 'w':
+            text = input("Введите сообщение для отправки:\n")
+            if text == 'quit':
+                break
+            message = utils.create_message(sock, text)
+            utils.send_message(sock, message)
+        elif MODE == 'r':
+            response = utils.get_response(sock, BYTES_TO_READ)
+            handled_response = utils.handle_response(response)
+            try:
+                handled_response.items()
+                for key, value in handled_response.items():
+                    client_logger.info(f"Получено сообщение{key}, {value}")
+            except AttributeError:
+                client_logger.info("Невозможно разобрать сообщение")
 
 
 if __name__ == '__main__':

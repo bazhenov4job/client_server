@@ -9,8 +9,12 @@ while True:
         PROCESS.append(subprocess.Popen('python server.py',
                                         creationflags=subprocess.CREATE_NEW_CONSOLE))
 
-        PROCESS.append(subprocess.Popen('python client.py',
+        PROCESS.append(subprocess.Popen('python client.py -m w',
                                         creationflags=subprocess.CREATE_NEW_CONSOLE))
+
+        for x in range(1):
+            PROCESS.append(subprocess.Popen('python client.py -m r',
+                                            creationflags=subprocess.CREATE_NEW_CONSOLE))
 
     elif ANSWER == 'x':
         while PROCESS:
