@@ -65,7 +65,7 @@ def main_client():
             text = input("Введите сообщение для отправки:\n")
             if text == 'quit':
                 break
-            message = utils.create_message(sock, text)
+            message = utils.create_message('w_client', text)
             utils.send_message(sock, message)
         elif MODE == 'r':
             response = utils.get_response(sock, BYTES_TO_READ)
@@ -74,6 +74,7 @@ def main_client():
                 handled_response.items()
                 for key, value in handled_response.items():
                     client_logger.info(f"Получено сообщение{key}, {value}")
+                print(handled_response['message'])
             except AttributeError:
                 client_logger.info("Невозможно разобрать сообщение")
 

@@ -45,7 +45,7 @@ def create_message(client, text):
         'encoding': 'utf-8',
         'message': text
     }
-    json_message = json.dumps(message).encode('utf-8')
+    json_message = json.dumps(message)
     return json_message
 
 

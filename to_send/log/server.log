@@ -12,3 +12,81 @@
 2020-03-23 17:27:55,236 - INFO - server - Порт хоста выбран по умолчанию
 2020-03-23 17:31:07,944 - INFO - server - Адрес хоста выбран по умолчанию
 2020-03-23 17:31:07,944 - INFO - server - Порт хоста выбран по умолчанию
+2020-03-24 09:42:40,329 - INFO - server - Адрес хоста выбран по умолчанию
+2020-03-24 09:42:40,329 - INFO - server - Порт хоста выбран по умолчанию
+2020-03-24 09:43:41,403 - INFO - server - Адрес хоста выбран по умолчанию
+2020-03-24 09:43:41,403 - INFO - server - Порт хоста выбран по умолчанию
+2020-03-24 09:43:55,941 - INFO - server - Похоже, клиент (604, ('127.0.0.1', 51029))
+2020-03-24 09:44:44,256 - INFO - server - Адрес хоста выбран по умолчанию
+2020-03-24 09:44:44,256 - INFO - server - Порт хоста выбран по умолчанию
+2020-03-24 09:46:24,363 - INFO - server - Адрес хоста выбран по умолчанию
+2020-03-24 09:46:24,363 - INFO - server - Порт хоста выбран по умолчанию
+2020-03-24 09:46:29,654 - INFO - server - Похоже, клиент (696, ('127.0.0.1', 51052))
+2020-03-24 09:54:16,799 - INFO - server - Адрес хоста выбран по умолчанию
+2020-03-24 09:54:16,799 - INFO - server - Порт хоста выбран по умолчанию
+2020-03-24 10:00:47,051 - INFO - server - Адрес хоста выбран по умолчанию
+2020-03-24 10:00:47,051 - INFO - server - Порт хоста выбран по умолчанию
+2020-03-24 10:00:59,215 - INFO - server - Похоже, клиент (624, ('127.0.0.1', 51187)) отключился
+2020-03-24 10:20:21,761 - INFO - server - Адрес хоста выбран по умолчанию
+2020-03-24 10:20:21,761 - INFO - server - Порт хоста выбран по умолчанию
+2020-03-24 10:20:40,408 - INFO - server - Адрес хоста выбран по умолчанию
+2020-03-24 10:20:40,408 - INFO - server - Порт хоста выбран по умолчанию
+2020-03-24 10:20:46,191 - INFO - server - Похоже, клиент (604, ('127.0.0.1', 51378)) отключился
+2020-03-24 10:22:17,442 - INFO - server - Адрес хоста выбран по умолчанию
+2020-03-24 10:22:17,442 - INFO - server - Порт хоста выбран по умолчанию
+2020-03-24 10:23:12,181 - INFO - server - Адрес хоста выбран по умолчанию
+2020-03-24 10:23:12,181 - INFO - server - Порт хоста выбран по умолчанию
+2020-03-24 10:26:06,428 - INFO - server - Адрес хоста выбран по умолчанию
+2020-03-24 10:26:06,428 - INFO - server - Порт хоста выбран по умолчанию
+2020-03-24 10:27:24,489 - INFO - server - Адрес хоста выбран по умолчанию
+2020-03-24 10:27:24,489 - INFO - server - Порт хоста выбран по умолчанию
+2020-03-24 10:30:08,867 - INFO - server - Адрес хоста выбран по умолчанию
+2020-03-24 10:30:08,868 - INFO - server - Порт хоста выбран по умолчанию
+2020-03-24 10:30:13,777 - INFO - utils - Сервер получил сообщение от клиента
+2020-03-24 10:30:13,785 - INFO - decors - Функция get_messageВызов из модуля common.utils. Вызов из функции main_server().Вызов из функции request
+2020-03-24 10:30:13,786 - INFO - server - Сервер получил сообщение  "{'action': 'msg', 'time': 'Tue Mar 24 10:30:13 2020', 'to': '', 'from': 'w_client', 'encoding': 'utf-8', 'message': 'hi'}" от клиента <socket.socket fd=636, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 51483)>
+2020-03-24 10:30:43,334 - INFO - server - Адрес хоста выбран по умолчанию
+2020-03-24 10:30:43,334 - INFO - server - Порт хоста выбран по умолчанию
+2020-03-24 11:03:12,814 - INFO - server - Адрес хоста выбран по умолчанию
+2020-03-24 11:03:12,814 - INFO - server - Порт хоста выбран по умолчанию
+2020-03-24 11:03:20,342 - INFO - utils - Сервер получил сообщение от клиента
+2020-03-24 11:03:20,375 - INFO - decors - Функция get_messageВызов из модуля common.utils. Вызов из функции main_server().Вызов из функции request
+2020-03-24 11:03:20,376 - INFO - server - Сервер получил сообщение  "{'action': 'msg', 'time': 'Tue Mar 24 11:03:20 2020', 'to': '', 'from': 'w_client', 'encoding': 'utf-8', 'message': 'hi'}" на сокет <socket.socket fd=544, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 51982)>
+2020-03-24 11:03:20,382 - INFO - decors - Функция send_responseВызов из модуля common.utils. Вызов из функции main_server().Вызов из функции response
+2020-03-24 11:03:25,424 - INFO - utils - Сервер получил сообщение от клиента
+2020-03-24 11:03:25,429 - INFO - decors - Функция get_messageВызов из модуля common.utils. Вызов из функции main_server().Вызов из функции request
+2020-03-24 11:03:25,430 - INFO - server - Сервер получил сообщение  "{'action': 'msg', 'time': 'Tue Mar 24 11:03:24 2020', 'to': '', 'from': 'w_client', 'encoding': 'utf-8', 'message': 'hi'}" на сокет <socket.socket fd=544, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 51982)>
+2020-03-24 11:03:25,437 - INFO - decors - Функция send_responseВызов из модуля common.utils. Вызов из функции main_server().Вызов из функции response
+2020-03-24 11:08:41,959 - INFO - server - Адрес хоста выбран по умолчанию
+2020-03-24 11:08:41,959 - INFO - server - Порт хоста выбран по умолчанию
+2020-03-24 11:08:46,982 - INFO - utils - Сервер получил сообщение от клиента
+2020-03-24 11:08:46,989 - INFO - decors - Функция get_messageВызов из модуля common.utils. Вызов из функции main_server().Вызов из функции request
+2020-03-24 11:08:46,990 - INFO - server - Сервер получил сообщение  "{'action': 'msg', 'time': 'Tue Mar 24 11:08:46 2020', 'to': '', 'from': 'w_client', 'encoding': 'utf-8', 'message': 'hi'}" на сокет <socket.socket fd=624, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52065)>
+2020-03-24 11:08:46,991 - INFO - decors - Функция send_responseВызов из модуля common.utils. Вызов из функции main_server().Вызов из функции response
+2020-03-24 11:08:50,005 - INFO - utils - Сервер получил сообщение от клиента
+2020-03-24 11:08:50,010 - INFO - decors - Функция get_messageВызов из модуля common.utils. Вызов из функции main_server().Вызов из функции request
+2020-03-24 11:08:50,010 - INFO - server - Сервер получил сообщение  "{'action': 'msg', 'time': 'Tue Mar 24 11:08:49 2020', 'to': '', 'from': 'w_client', 'encoding': 'utf-8', 'message': 'hi'}" на сокет <socket.socket fd=624, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52065)>
+2020-03-24 11:08:50,016 - INFO - decors - Функция send_responseВызов из модуля common.utils. Вызов из функции main_server().Вызов из функции response
+2020-03-24 11:08:53,030 - INFO - utils - Сервер получил сообщение от клиента
+2020-03-24 11:08:53,034 - INFO - decors - Функция get_messageВызов из модуля common.utils. Вызов из функции main_server().Вызов из функции request
+2020-03-24 11:08:53,035 - INFO - server - Сервер получил сообщение  "{'action': 'msg', 'time': 'Tue Mar 24 11:08:52 2020', 'to': '', 'from': 'w_client', 'encoding': 'utf-8', 'message': 'hi'}" на сокет <socket.socket fd=624, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52065)>
+2020-03-24 11:08:53,040 - INFO - decors - Функция send_responseВызов из модуля common.utils. Вызов из функции main_server().Вызов из функции response
+2020-03-24 11:16:34,340 - INFO - server - Адрес хоста выбран по умолчанию
+2020-03-24 11:16:34,340 - INFO - server - Порт хоста выбран по умолчанию
+2020-03-24 11:16:55,029 - INFO - server - Адрес хоста выбран по умолчанию
+2020-03-24 11:16:55,029 - INFO - server - Порт хоста выбран по умолчанию
+2020-03-24 11:17:01,058 - INFO - utils - Сервер получил сообщение от клиента
+2020-03-24 11:17:01,065 - INFO - decors - Функция get_messageВызов из модуля common.utils. Вызов из функции main_server().Вызов из функции request
+2020-03-24 11:17:01,065 - INFO - server - Сервер получил сообщение  "{'action': 'msg', 'time': 'Tue Mar 24 11:17:01 2020', 'to': '', 'from': 'w_client', 'encoding': 'utf-8', 'message': 'hi'}" на сокет <socket.socket fd=596, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52111)>
+2020-03-24 11:17:01,066 - INFO - decors - Функция send_responseВызов из модуля common.utils. Вызов из функции main_server().Вызов из функции response
+2020-03-24 11:17:01,067 - INFO - decors - Функция send_responseВызов из модуля common.utils. Вызов из функции main_server().Вызов из функции response
+2020-03-24 11:17:06,090 - INFO - utils - Сервер получил сообщение от клиента
+2020-03-24 11:17:06,095 - INFO - decors - Функция get_messageВызов из модуля common.utils. Вызов из функции main_server().Вызов из функции request
+2020-03-24 11:17:06,096 - INFO - server - Сервер получил сообщение  "{'action': 'msg', 'time': 'Tue Mar 24 11:17:05 2020', 'to': '', 'from': 'w_client', 'encoding': 'utf-8', 'message': 'hi'}" на сокет <socket.socket fd=596, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52111)>
+2020-03-24 11:17:06,102 - INFO - decors - Функция send_responseВызов из модуля common.utils. Вызов из функции main_server().Вызов из функции response
+2020-03-24 11:17:06,109 - INFO - decors - Функция send_responseВызов из модуля common.utils. Вызов из функции main_server().Вызов из функции response
+2020-03-24 11:17:15,146 - INFO - utils - Сервер получил сообщение от клиента
+2020-03-24 11:17:15,152 - INFO - decors - Функция get_messageВызов из модуля common.utils. Вызов из функции main_server().Вызов из функции request
+2020-03-24 11:17:15,153 - INFO - server - Сервер получил сообщение  "{'action': 'msg', 'time': 'Tue Mar 24 11:17:14 2020', 'to': '', 'from': 'w_client', 'encoding': 'utf-8', 'message': 'hi'}" на сокет <socket.socket fd=596, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52111)>
+2020-03-24 11:17:15,158 - INFO - decors - Функция send_responseВызов из модуля common.utils. Вызов из функции main_server().Вызов из функции response
+2020-03-24 11:17:15,165 - INFO - decors - Функция send_responseВызов из модуля common.utils. Вызов из функции main_server().Вызов из функции response

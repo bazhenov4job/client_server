@@ -12,7 +12,7 @@ while True:
         PROCESS.append(subprocess.Popen('python client.py -m w',
                                         creationflags=subprocess.CREATE_NEW_CONSOLE))
 
-        for x in range(1):
+        for x in range(2):
             PROCESS.append(subprocess.Popen('python client.py -m r',
                                             creationflags=subprocess.CREATE_NEW_CONSOLE))
 

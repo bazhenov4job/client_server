@@ -24,7 +24,6 @@ def write_response(requests, w_clients, all_clients):
 
         for w_sock in w_clients:
             if r_sock != w_sock:
-                print(w_sock)
                 try:
                     w_sock.send(message.encode('utf-8'))
                 except:
